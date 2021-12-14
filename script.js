@@ -35,7 +35,11 @@ function printArr (arr) {
 }
 
 tabBtn.addEventListener('click', function() {
-    inputEl.value = window.location.href
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        myLeads.push(tabs[0].url)
+        printArr(myLeads)
+        localStorage.setItem('myLeads', JSON.stringify(myLeads))
+    })
 })
 
 deleteBtn.addEventListener('click', function() {

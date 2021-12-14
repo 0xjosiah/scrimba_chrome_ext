@@ -5,5 +5,8 @@
     "action": {
         "default_popup": "index.html",
         "default_icon": "icons8-business-network-48.png"
-    }
+    },
+    "permissions": [
+      "tabs"
+    ]
 }
